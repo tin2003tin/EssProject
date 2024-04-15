@@ -1,9 +1,10 @@
 import mongoose from "mongoose";
+import { uuid } from "uuidv4" ;
 
 const BoardSchema = new mongoose.Schema({
   boardId: {
     type: String,
-     default: uuidv4,
+    default: uuid,
     required: true,
   },
   table: {

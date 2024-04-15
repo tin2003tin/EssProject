@@ -1,5 +1,8 @@
 import "dotenv/config";
+import "./config/db.js" ;
+
 import app from "./app.js";
+
 import {
   handleUncaughtException,
   handleUnhandledRejection,

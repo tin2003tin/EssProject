@@ -1,9 +1,10 @@
 import mongoose from "mongoose";
+import { uuid } from "uuidv4" ;
 
 const RoomSchema = new mongoose.Schema({
   roomId: {
     type: String,
-    default: uuidv4,
+    default: uuid,
     required: true,
   },
   ownerId: {
@@ -16,14 +17,17 @@ const RoomSchema = new mongoose.Schema({
   },
   playerId: {
     type: String,
+    default: "NaN",
     required: true,
   },
   playerName: {
     type: String,
+    default: "null",
     required: true,
   },
   gameState: {
     type: String,
+    default: "waiting",
     required: true,
   },
   boardId: {
@@ -32,6 +36,7 @@ const RoomSchema = new mongoose.Schema({
   },
   playerTurn: {
     type: String,
+    default: "owner",
     required: true,
   },
 });
