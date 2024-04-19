@@ -8,11 +8,11 @@ export function handleUncaughtException(err) {
 export function handleUnhandledRejection(err) {
   console.log("UnhandledRejection 💥 Shutting down...");
   console.log(`${err}`);
-  if (server && server.close) {
-    server.close(() => {
-      process.exit(1);
-    });
-  } else {
-    process.exit(1);
-  }
+  // if (server && server.close) {
+  //   server.close(() => {
+  //     process.exit(1);
+  //   });
+  // } else {
+  //   process.exit(1);
+  // }
 }

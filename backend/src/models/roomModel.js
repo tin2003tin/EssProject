@@ -1,9 +1,8 @@
 import mongoose from "mongoose";
 
 const RoomSchema = new mongoose.Schema({
-  roomId: {
+  name: {
     type: String,
-    default: uuidv4,
     required: true,
   },
   ownerId: {
@@ -16,22 +15,35 @@ const RoomSchema = new mongoose.Schema({
   },
   playerId: {
     type: String,
+    default: "NaN",
     required: true,
   },
   playerName: {
     type: String,
+    default: "null",
     required: true,
   },
   gameState: {
     type: String,
+    default: "waiting",
     required: true,
   },
-  boardId: {
-    type: String,
-    required: true,
+  board: {
+    type: [[String]],
+    default: [
+      ["", "1", "", "1", "", "1", "", "1"],
+      ["1", "", "1", "", "1", "", "1", ""],
+      ["", "0", "", "0", "", "0", "", "0"],
+      ["0", "", "0", "", "0", "", "0", ""],
+      ["", "0", "", "0", "", "0", "", "0"],
+      ["0", "", "0", "", "0", "", "0", ""],
+      ["", "-1", "", "-1", "", "-1", "", "-1"],
+      ["-1", "", "-1", "", "-1", "", "-1", ""],
+    ],
   },
   playerTurn: {
     type: String,
+    default: "owner",
     required: true,
   },
 });
