@@ -4,12 +4,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style/global.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Concert One"
+      rel="stylesheet"
+    />
     <title>Document</title>
   </head>
-  <body>
-    Home Page
-    <button id="button">Click</button>
-    <button id="room-page-button">To Room</button>
+  <body class="homeBody">
+    <img id="TreeTopLeft" src="res/treeTopLeft.png" />
+
+    <section>
+      <div class="centerBox">
+        <div >
+            <img class="MarkHotlogo" src="res/MarkHotLogo.png">
+            <img class="MarkHot" id="Mark" src="res/Mark.png" width="125px" height="125px">
+        </div>
+        <form id="myForm" >
+          <input type="text" class="inputName" name="name" id="Get-Name-Input" placeholder="Fill your name" cols="50" rows="10"></input>
+          <button type="submit" id="Submit-Button">Join game</button>
+        </form>
+      </div>
+    </section>
+
+    <img id="TreeBottomRight" src="res/TreeBottomRight.png" />
+
+    <script type="module" src="script/homePage.js"></script>
   </body>
-  <script type="module" src="script/homePage.js"></script>
 </html>

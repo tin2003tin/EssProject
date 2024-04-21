@@ -4,13 +4,43 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style/global.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Concert One"
+      rel="stylesheet"
+    />
     <title>Document</title>
   </head>
-  <body>
-    Room Page
-    <button id="button">Click</button>
-    <button id="home-page-button">To Home</button>
-    <button id="game-page-button">To Game</button>
+  <body class="roomBody">
+    <div class="Navbar">
+      <div class="left">
+        <label id="Navbar-Button-Room-Text">Room</label>
+        <button id="Navbar-Button-Home-Text">Home</button>
+      </div>
+      <div class="center">Search</div>
+      <div class="right">
+        <label id="Navbar-User"></label>
+      </div>
+    </div>
+
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Create Room</h2>
+       <div>Enter Your Name room</div>
+        <form id="nameForm" class="roomNameInput">
+          <input type="text" id="nameInput" placeholder="Enter your name room" required>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+  </div>
+</div>
+
+    <div style="margin-top: 120px">
+      <button type="button" id="Create-Button">Create</button>
+    </div>
+    <hr />
+      <div class="Joining-Room" id="joiningRoomContainer"></div>
+    </div>
+    <script type="module" src="script/roomPage.js"></script>
   </body>
-  <script type="module" src="script/roomPage.js"></script>
 </html>

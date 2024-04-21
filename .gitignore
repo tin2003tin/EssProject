@@ -13,7 +13,7 @@ jspm_packages/
 .npm
 
 # dotenv environment variables file
-.env
+# .env
 
 # Editor-specific files
 .vscode/

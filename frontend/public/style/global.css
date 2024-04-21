@@ -1,18 +1,321 @@
-button {
-  background-color: lightblue;
-  color: white;
-  font-size: 20px;
-  font-family: "Courier New", Courier, monospace;
-  font-weight: 700;
-  border-radius: 10px;
+.Navbar {
+  position: fixed;
+  top: 0;
   border: none;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 10px 20px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  margin: 0%;
+  width: 100%;
+  height: 100px;
+  background-color: #cb997e;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-button:hover {
-  background-color: dodgerblue;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.Navbar .left {
+  display: flex;
+  flex-direction: row;
+}
+.Navbar-Button {
+  background-color: #cb997e;
+  display: inline;
+}
+
+#Navbar-Button-Room-Text {
+  color: rgba(252, 234, 220, 0.7);
+  background-color: #cb997e;
+  border-radius: 10px;
+  border: none;
+  font-family: "Concert One";
+  font-size: 32px;
+  padding: 10px 20px;
+}
+
+#Navbar-Button-Home-Text {
+  color: rgba(252, 234, 220, 0.7);
+  background-color: #cb997e;
+  border-radius: 10px;
+  border: none;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  font-family: "Concert One";
+  font-size: 32px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+#Navbar-Button-Home-Text:hover {
+  color: rgba(252, 234, 220, 1);
+}
+#Create-Button {
+  display: block;
+  width: 10%;
+  border-style: none;
+  border-width: 1px;
+  color: rgba(252, 234, 220, 0.7);
+  background-color: #cb997e;
+  padding: 14px 28px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  margin: 10px;
+  border-radius: 14px;
+  font-family: "Concert One";
+  font-weight: lighter;
+  font-size: 26px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  min-width: 120px;
+}
+
+#Create-Button:hover {
+  color: rgba(252, 234, 220, 1);
+  background-color: #c78c6d;
+}
+.Joining-Button {
+  display: block;
+  width: 100%;
+  border-style: none;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0.195);
+  background-color: #ffffff;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  margin: 10px;
+  border-radius: 8px;
+  font-family: "Concert One";
+  font-weight: lighter;
+  font-size: 18px;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.Joining-Button:hover {
+  background-color: rgba(0, 0, 0, 0.195);
+  transform: translateY(-3px);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+.Player {
+  color: #426b1f;
+}
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 92px;
+  height: calc(100%-560px);
+  max-height: 290px;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+section .centerBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  height: 100%;
+  margin-top: auto;
+}
+#myForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#TreeTopLeft {
+  position: absolute;
+  max-width: 40%;
+  left: 0;
+  top: 0;
+  min-width: 10%;
+}
+#TreeBottomRight {
+  position: absolute;
+  max-width: 40%;
+  right: 0;
+  bottom: 0;
+  min-width: 10%;
+}
+#Submit-Button {
+  width: 100px;
+  height: 50px;
+  margin: 5px;
+  border: none;
+  border-radius: 50px;
+  background-color: #4caf50;
+  color: white;
+  font-family: "Concert One", sans-serif;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  outline: none;
+}
+#Submit-Button:hover {
+  background-color: #3e8e41;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+}
+
+#Submit-Button:focus {
+  outline: none; /* Remove outline on focus */
+}
+
+#Submit-Button:active {
+  transform: scale(0.95); /* Add a slight scale down effect on click */
+}
+
+.inputName {
+  margin-top: 15px;
+  margin-left: 20px;
+  width: 300px;
+  height: 50px;
+  border-radius: 50px;
+  border: none;
+  font-family: "Concert One", sans-serif;
+  font-size: 1rem;
+  padding-left: 15px;
+  box-sizing: border-box;
+}
+
+input[type="text"] {
+  padding-left: 20px;
+}
+.homeBody {
+  background-color: #fceadc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100vh;
+  margin: 0;
+}
+
+.roomBody {
+  background-color: #fceadc;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100vh;
+  margin: 0;
+}
+
+.Joining-Room {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+}
+@media (max-width: 800px) {
+  .Joining-Room {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .Joining-Room {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+hr {
+  border: none;
+  height: 4px;
+  background-color: #cb997e;
+  margin: 10px 0;
+}
+
+.player-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.05); /* Black w/ opacity */
+}
+
+.modal-content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border: none;
+  font-size: 30px;
+  border-radius: 20px;
+  margin: 15% auto;
+  padding: 20px;
+  width: 25%;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.close {
+  align-self: flex-start;
+  color: black;
+  float: right;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+#nameForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#nameInput {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+.roomNameInput button[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.roomNameInput button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.game-modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.2); /* Black w/ opacity */
+}
+
+.game-modal .modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
 }

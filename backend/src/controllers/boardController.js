@@ -19,7 +19,6 @@ export const updateBoard = async (req, res) => {
   console.log(req.body);
   console.log(req.query.userid);
   let room = await Room.findById(req.body.roomId);
-  printBoardAsColumnsAndRows(room);
   room.board[req.body.from[1]][req.body.from[0]] = 0;
   let playerTurn;
   if (req.query.userid == room.ownerId) {
@@ -36,7 +35,6 @@ export const updateBoard = async (req, res) => {
     room.board[req.body.cupture[1]][req.body.cupture[0]] = 0;
   }
   console.log("==============================");
-  printBoardAsColumnsAndRows(room);
   await Room.findByIdAndUpdate(req.body.roomId, {
     board: room.board,
     playerTurn: playerTurn,

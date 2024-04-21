@@ -1,12 +1,14 @@
-import { gethealthCheck } from "./api.js";
+import { deleteRoom, getRoom, kickRoom } from "./api.js";
 
-document.addEventListener("DOMContentLoaded", () => {
-  const button = document.getElementById("button");
-  button.addEventListener("click", () => {
-    gethealthCheck();
-  });
-  const roomButton = document.getElementById("room-page-button");
-  roomButton.addEventListener("click", () => {
-    window.location.href = "/room";
-  });
+document.addEventListener("DOMContentLoaded", async () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const userId = localStorage.getItem("playerID");
+  const roomId = urlParams.get("roomid");
+  //Get Room
+  const room = await getRoom(roomId, userId);
+
+  //Pop Up
+  const modal = document.getElementById("myModal");
+  modal.style.display = "none";
+
 });

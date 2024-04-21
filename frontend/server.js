@@ -21,7 +21,7 @@ app.get("/game", (req, res) => {
   res.sendFile(__dirname + "/public/game.html");
 });
 
-const PORT = 8080;
+const PORT = 8081;
 app.listen(PORT, "0.0.0.0", () => {
   console.log(`============================================`);
   console.log(`Frontend Server ready at http://localhost:${PORT}`);

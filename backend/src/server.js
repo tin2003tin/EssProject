@@ -58,6 +58,17 @@ async function periodicTask() {
         i--;
       }
     }
+    if (room.gameState === "running") {
+      const otimeDifference = currentTime - room.owner_last_fetch;
+      const ownerDifference = otimeDifference / 1000;
+      const ptimeDifference = currentTime - room.player_last_fetch;
+      const playerDifference = ptimeDifference / 1000;
+      if (ownerDifference > 10 || playerDifference > 10) {
+        await Room.findByIdAndRemove(room.roomid);
+        activeRoom.splice(i, 1);
+        i--;
+      }
+    }
   }
 }
 
