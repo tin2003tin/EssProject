@@ -194,17 +194,31 @@ input[type="text"] {
 }
 
 .homeBody {
-  background-color: #fceadc;
+  background-image: linear-gradient(to bottom, #fceadc, #ffffff);
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   height: 100vh;
   margin: 0;
+  overflow: hidden;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease; /* Smooth transition for background color change */
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
 }
 
 .roomBody {
-  background-color: #fceadc;
+  background-image: linear-gradient(to bottom, #fceadc, #ffffff);
   display: flex;
   flex-direction: column;
   position: relative;
@@ -345,7 +359,7 @@ hr {
 .gameBody {
   display: flex;
   flex-direction: column;
-  background-color: #fceadc;
+  background-image: linear-gradient(to bottom, #fceadc, #ffffff);
   font-family: "Concert one";
   justify-content: center;
 }

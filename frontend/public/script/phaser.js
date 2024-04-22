@@ -213,19 +213,10 @@ class Checker {
 
   clearMoveableShowed() {
     SelectedChecker.moveable.forEach((move) => {
-      if (Board.ForceToMove) {
-        if (move.isForce) {
           Board.BoardCheckers[
             move.col + move.row * 8
           ].sprite.fillColor = 0xffa500;
           Board.BoardCheckers[move.col + move.row * 8].sprite.fillAlpha = 0.0;
-        }
-      } else {
-        Board.BoardCheckers[
-          move.col + move.row * 8
-        ].sprite.fillColor = 0xffa500;
-        Board.BoardCheckers[move.col + move.row * 8].sprite.fillAlpha = 0.0;
-      }
     });
   }
 

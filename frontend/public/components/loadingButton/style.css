@@ -1,0 +1,51 @@
+.loading {
+  position: relative;
+  overflow: hidden;
+  transform: translateZ(0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  height: 64px;
+  padding: 0 38px 0 30px;
+  border: 0;
+  border-radius: 32px;
+  font-family: "Euclid Circular A", Poppins;
+  font-size: 18px;
+  font-weight: 500;
+  background: var(--color-light);
+  color: #0e1e25;
+  background-color: white;
+  position: relative;
+  cursor: pointer;
+}
+
+.spinner {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  translate: 0 -50%;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 3px solid rgb(255 255 255 / 14%);
+  border-top-color: #000000;
+  opacity: 0;
+  animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+  100% {
+    rotate: 1turn;
+  }
+}
+
+.spinner.visible {
+  opacity: 1;
+}
+
+.disable {
+  opacity: 1;
+  display: none;
+  transition: opacity 0.3s ease, height 0.3s ease;
+}

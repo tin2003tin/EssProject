@@ -1,0 +1,98 @@
+.cards {
+  display: grid;
+  grid-template-columns: repeat(8, 150px);
+  grid-template-rows: repeat(8, 150px);
+  gap: 8px;
+  padding: 32px;
+}
+
+.cards:hover .card {
+  background: radial-gradient(
+    800px circle at var(--xPos) var(--yPos),
+    rgba(255, 172, 249, 0.4),
+    transparent 15%
+  );
+}
+
+.card {
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(
+    400px circle at 0 0,
+    rgba(134, 134, 134, 0),
+    transparent 0%
+  );
+  border-radius: 8px;
+  transition: 0.15s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.cards .card:hover::before {
+  cursor: pointer;
+  opacity: 1;
+}
+
+.card::before {
+  cursor: pointer;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    500px circle at var(--xPos) var(--yPos),
+    rgba(0, 255, 241, 0.1),
+    transparent 35%
+  );
+  opacity: 0;
+  transition: all 0.15s ease-in-out;
+}
+
+.card-content {
+  display: flex;
+  color: white;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  background: rgb(0 0 0 / 40%);
+  border-radius: inherit;
+  transition: all 0.25s;
+  height: calc(100% - 2px);
+  width: calc(100% - 2px);
+}
+
+.card :is(i, h2) {
+  opacity: 0.45;
+  transition: 0.3s;
+}
+
+.card:hover :is(i, h2) {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.card i {
+  width: 30px;
+  cursor: pointer;
+}
+
+.card h2 {
+  cursor: pointer;
+  margin: 0;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.card h3 {
+  cursor: pointer;
+  margin: 0;
+  font-weight: 600;
+  font-size: 21px;
+}

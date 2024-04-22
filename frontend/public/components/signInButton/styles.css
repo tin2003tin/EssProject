@@ -1,0 +1,108 @@
+.textbox {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.textbox :is(label, span) {
+  position: absolute;
+  top: 50%;
+  translate: 0 -50%;
+  pointer-events: none;
+  color: #3d3d3d;
+  transition: 0.3s;
+}
+
+.textbox > label {
+  left: 44px;
+  translate: 0 -50%;
+  padding: 4px 8px;
+}
+
+.textbox > .icon {
+  z-index: 2;
+  left: 16px;
+  font-size: 26px;
+}
+
+.textbox > input {
+  height: 56px;
+  width: 240px;
+  padding-left: 48px;
+  border: 2px solid #292929;
+  border-radius: 8px;
+  outline: none;
+  background: transparent;
+  color: #000000;
+  font-family: inherit;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.textbox > input.valid.has-value {
+  border-color: #14ca99;
+}
+
+.textbox > :is(input:focus, .has-value) {
+  border-color: #909090;
+}
+
+.textbox > input.has-value {
+  border-color: #ff5360;
+}
+
+.textbox > :is(input:focus, .has-value) ~ span {
+  color: #2d2d2d;
+}
+
+.textbox > :is(input:focus, .has-value) ~ label {
+  color: white;
+  font-weight: 700;
+  background-color: gray;
+  translate: -42px -42px;
+  scale: 0.8;
+}
+
+@keyframes spin {
+  100% {
+    rotate: 1turn;
+  }
+}
+
+.spinner {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  translate: 0 -50%;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 3px solid rgb(255 255 255 / 14%);
+  border-top-color: #000000;
+  opacity: 0;
+  animation: spin 1s infinite linear;
+}
+
+.spinner.visible {
+  opacity: 1;
+}
+
+button {
+  width: 240px;
+  height: 56px;
+  border-radius: 6px;
+  border: 0;
+  font-family: inherit;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  padding: 0 18px;
+  justify-content: space-between;
+  background: #2e3231;
+  color: #f7f7f7;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.33;
+}

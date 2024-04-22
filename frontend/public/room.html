@@ -2,45 +2,198 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style/global.css" />
+    <title>Sidebars</title>
+    <link rel="stylesheet" href="./components/sidebar/styles.css" />
+    <link rel="stylesheet" href="./style/roompage.css" />
+    <link rel="stylesheet" href="./components/footer/style.css" />
+    <link rel="stylesheet" href="./components/loadingButton/style.css" />
+    <link rel="stylesheet" href="./components/cards/style.css" />
+    <link rel="stylesheet" href="./components/modal/style.css" />
+    <link rel="stylesheet" href="./components/signInButton/styles.css" />
     <link
-      href="https://fonts.googleapis.com/css?family=Concert One"
       rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
     />
-    <title>Document</title>
+    <script src="https://unpkg.com/akar-icons-fonts"></script>
   </head>
-  <body class="roomBody">
-    <div class="Navbar">
-      <div class="left">
-        <label id="Navbar-Button-Room-Text">Room</label>
-        <button id="Navbar-Button-Home-Text">Home</button>
-      </div>
-      <div class="center">Search</div>
-      <div class="right">
-        <label id="Navbar-User"></label>
+  <body>
+    <div class="modal-body">
+      <div class="modal-background"></div>
+      <div class="modal">
+        <h2>Create Room</h2>
+        <div class="textbox">
+          <input
+            oninput="handleChange(event)"
+            onkeydown="handleStartTyping()"
+            autocomplete="off"
+            id="input"
+            type="text"
+            style="color: white;"
+          />
+          <label htmlFor="input">Room Name</label>
+          <span class="spinner"></span>
+        </div>
+        <button disabled id="Submit-Button">
+          <p>Create Room</p>
+          <span class="material-symbols-outlined"> arrow_right_alt </span>
+        </button>
       </div>
     </div>
 
-    <div id="myModal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2 class="createRoom">Create Room</h2>
-       <div class="createName">Enter Your Name room</div>
-        <form id="nameForm" class="roomNameInput">
-          <input type="text" id="nameInput" placeholder="Enter your name room" required>
-          <button type="submit">Submit</button>
-        </form>
+    <aside class="sidebar">
+      <header>
+        <button
+          type="button"
+          className="sidebar-burger"
+          onClick="toggleSidebar()"
+        >
+          <i class="ai-three-line-horizontal"></i>
+        </button>
+        <img src="res/MarkHotLogo.png" />
+        <img src="res/Mark.png" />
+      </header>
+      <ul>
+        <li>
+          <button type="button">
+            <i class="ai-face-happy"></i>
+            <p id="sidebar-user">Guest</p>
+          </button>
+          <button type="button" id="home-pagee-button">
+            <i class="ai-home-alt1"></i>
+            <p>Home</p>
+          </button>
+        </li>
+        <li>
+          <button type="button" onclick="onClick(this)">
+            <i class="ai-search"></i>
+            <p>Searh</p>
+          </button>
+        </li>
+        <li>
+          <button type="button" onclick="onClick(this)">
+            <i class="ai-folder-add"></i>
+            <p>Create</p>
+            <i class="ai-chevron-down-small"></i>
+          </button>
+          <div class="sub-menu">
+            <ul>
+              <li>
+                <button type="button" id="Create-Button">New Room</button>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <button type="button" onclick="onClick(this)">
+            <i class="ai-gear"></i>
+            <p>Settings</p>
+            <i class="ai-chevron-down-small"></i>
+          </button>
+          <div class="sub-menu">
+            <ul>
+              <li>
+                <button type="button">Background</button>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <button type="button" onclick="onClick(this)">
+            <i class="ai-person"></i>
+            <p>Profile</p>
+            <i class="ai-chevron-down-small"></i>
+          </button>
+          <div class="sub-menu">
+            <ul>
+              <li>
+                <button type="button">Avatar</button>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </aside>
+    <section class="room-section">
+      <div>
+        <button class="loading">
+          <span class="spinner"></span>
+          <p class="loading-text">Reloading</p>
+        </button>
       </div>
-  </div>
-</div>
+      <div class="Joining-Room">
+        <div class="cards"></div>
+      </div>
+    </section>
 
-    <div style="margin-top: 120px">
-      <button type="button" id="Create-Button">Create</button>
+    <div class="background">
+      <svg
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px"
+        y="0px"
+        width="100%"
+        height="100%"
+        viewBox="0 0 1200 900"
+      >
+        <defs>
+          <path
+            id="wave"
+            fill="rgba(255, 192, 203, 0.6)"
+            d="M-363.852,502.589c0,0,236.988-41.997,505.475,0
+      s371.981,38.998,575.971,0s293.985-39.278,505.474,5.859s493.475,48.368,716.963-4.995v560.106H-363.852V502.589z"
+          />
+        </defs>
+        <g>
+          <use xlink:href="#wave" opacity=".4">
+            <animateTransform
+              attributeName="transform"
+              attributeType="XML"
+              type="translate"
+              dur="8s"
+              calcMode="spline"
+              values="270 230; -334 180; 270 230"
+              keyTimes="0; .5; 1"
+              keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0"
+              repeatCount="indefinite"
+            />
+          </use>
+          <use xlink:href="#wave" opacity=".6">
+            <animateTransform
+              attributeName="transform"
+              attributeType="XML"
+              type="translate"
+              dur="6s"
+              calcMode="spline"
+              values="-270 230;243 220;-270 230"
+              keyTimes="0; .6; 1"
+              keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0"
+              repeatCount="indefinite"
+            />
+          </use>
+          <use xlink:href="#wave" opacty=".9">
+            <animateTransform
+              attributeName="transform"
+              attributeType="XML"
+              type="translate"
+              dur="4s"
+              calcMode="spline"
+              values="0 230;-140 200;0 230"
+              keyTimes="0; .4; 1"
+              keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0"
+              repeatCount="indefinite"
+            />
+          </use>
+        </g>
+      </svg>
     </div>
-    <hr />
-      <div class="Joining-Room" id="joiningRoomContainer"></div>
-    </div>
+    <script src="./components/sidebar/main.js"></script>
+    <script
+      type="text/javascript"
+      src="./components/signInButton/main.js"
+    ></script>
     <script type="module" src="script/roomPage.js"></script>
   </body>
 </html>

@@ -1,15 +1,14 @@
 const fixedEncryptionKey = "0123456789abcdef0123456789abcdef"; // 32 btyes (AES-256)
-
 document
-  .getElementById("myForm")
-  .addEventListener("submit", async function (event) {
+  .getElementById("Submit-Button")
+  .addEventListener("click", async function (event) {
     event.preventDefault();
-    const userNameInput = document.getElementById("Get-Name-Input");
+    const userNameInput = document.getElementById("input");
     const userName = userNameInput.value.trim();
 
     if (userName.length > 15) {
       alert("Please enter a name with 15 words or less.");
-      userNameInput.value = ""; 
+      userNameInput.value = "";
       return;
     }
 

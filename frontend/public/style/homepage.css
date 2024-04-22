@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-image: linear-gradient(to bottom, #fceadc, #ffffff);
+  font-family: "Euclid Circular A", "Poppins";
+  position: relative;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.MarkHotlogo {
+  margin: 20px;
+}
+.MarkHot {
+  position: relative;
+  top: 0;
+  transition: top 0.3s ease;
+}
+
+.MarkHot:hover {
+  top: -10px;
+}
+#TreeTopLeft {
+  position: absolute;
+  max-width: 40%;
+  left: 0;
+  top: 0;
+  min-width: 10%;
+  z-index: -10;
+}
+
+#TreeBottomRight {
+  position: absolute;
+  max-width: 40%;
+  right: 0;
+  bottom: 0;
+  min-width: 10%;
+  z-index: -10;
+}

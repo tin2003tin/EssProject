@@ -1,0 +1,19 @@
+body {
+  margin: 0;
+
+  background-image: linear-gradient(to bottom, #fceadc, #ffffff);
+  height: 100vh;
+  font-family: "Euclid Circular A";
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  background-repeat: repeat-y;
+  overflow-y: hidden;
+}
+* {
+  box-sizing: border-box;
+}
+
+.room-section {
+  margin-left: 20%;
+}
