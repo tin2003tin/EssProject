@@ -168,7 +168,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
-  window.onload = showAllRooms;
+  showAllRooms();
 
   //Join Room
   function jointargetRoom(roomId) {
