@@ -126,12 +126,8 @@
 
 @media (max-width: 768px) {
   .sidebar {
-    width: 0;
-    overflow: hidden;
-  }
-
-  .sidebar button {
-    display: none;
+    width: 180px;
+    /* overflow: hidden; */
   }
 
   .sidebar.active {

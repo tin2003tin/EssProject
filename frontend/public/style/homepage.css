@@ -60,3 +60,9 @@ label {
   font-family: "Quicksand";
   font-weight: 500;
 }
+
+@media (max-width: 768px) {
+  .logo {
+    scale: 0.6;
+  }
+}

@@ -1,11 +1,30 @@
 .cards {
   display: grid;
   grid-template-columns: repeat(8, 150px);
-  grid-template-rows: repeat(8, 150px);
+
   gap: 8px;
   padding: 32px;
 }
+@media screen and (max-width: 1300px) {
+  .cards {
+    grid-template-columns: repeat(4, 150px);
+    padding: 16px;
+  }
+}
 
+@media screen and (max-width: 800px) {
+  .cards {
+    grid-template-columns: repeat(2, 150px);
+    padding: 16px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .cards {
+    grid-template-columns: repeat(1, 150px);
+    padding: 16px;
+  }
+}
 .cards:hover .card {
   background: radial-gradient(
     800px circle at var(--xPos) var(--yPos),
@@ -20,6 +39,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 150px;
   background: radial-gradient(
     400px circle at 0 0,
     rgba(134, 134, 134, 0),

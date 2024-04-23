@@ -140,7 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Add empty rooms after all real rooms are added
-    const remainingEmptyRooms = 32 - rooms.length;
+    const remainingEmptyRooms = 24 - rooms.length;
     for (let i = 0; i < remainingEmptyRooms; i++) {
       await new Promise((resolve) => {
         setTimeout(() => {

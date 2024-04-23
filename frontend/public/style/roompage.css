@@ -1,6 +1,5 @@
 body {
   margin: 0;
-
   background-image: linear-gradient(to bottom, #fceadc, #ffffff);
   height: 100vh;
   font-family: "Euclid Circular A";
@@ -8,7 +7,7 @@ body {
   display: flex;
   justify-content: flex-start;
   background-repeat: repeat-y;
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
 }
 
 * {
@@ -17,6 +16,30 @@ body {
 
 .room-section {
   margin-left: 20%;
+}
+
+@media screen and (max-width: 1300px) {
+  .room-section {
+    margin-left: 35%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .room-section {
+    margin-left: 35%;
+  }
+  .logo {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .room-section {
+    margin-left: 55%;
+  }
+  .logo {
+    display: none;
+  }
 }
 
 .sidebar {

@@ -248,7 +248,7 @@ class Checker {
         const nextCol = col + directions[i].colChange;
         if (0 <= nextCol && nextCol < 8 && 0 <= nextRow && nextRow < 8) {
           const target = Board.BoardCheckers[nextCol + nextRow * 8];
-          
+
           if (target.type === 0) {
             if (this.isKing) {
               this.move(nextCol, nextRow, i == 0, i == 1, i == 2, i == 3);
@@ -502,18 +502,18 @@ class Board extends Phaser.Scene {
     console.log(white);
     console.log(black);
 
-    let white_moveable = false;
-    let black_moveable = false;
-    Board.BoardCheckers.forEach((checker) => {
-      if (checker.type > 0 && checker.moveable.length > 0) {
-        white_moveable = true;
-      }
-      if (checker.color < 0 && checker.moveable.length > 0) {
-        black_moveable = true;
-      }
-    });
-    console.log(white_moveable);
-    console.log(black_moveable);
+    // let white_moveable = false;
+    // let black_moveable = false;
+    // Board.BoardCheckers.forEach((checker) => {
+    //   if (checker.type > 0 && checker.moveable.length > 0) {
+    //     white_moveable = true;
+    //   }
+    //   if (checker.color < 0 && checker.moveable.length > 0) {
+    //     black_moveable = true;
+    //   }
+    // });
+    // console.log(white_moveable);
+    // console.log(black_moveable);
     // if (!white_moveable) {
     //   whoWin = currentRoom.playerName;
     //   return true;
@@ -562,5 +562,9 @@ function showPlayersName(room) {
   const owner_name = document.getElementById("owner-name");
   owner_name.textContent = "Black: " + room.ownerName;
   const player_name = document.getElementById("player-name");
-  player_name.textContent = "White: " + room.playerName;
+  if (room.playerName == "null") {
+    player_name.textContent = "White: ____";
+  } else {
+    player_name.textContent = "White: " + room.playerName;
+  }
 }

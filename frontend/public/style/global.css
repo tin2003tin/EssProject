@@ -368,6 +368,7 @@ hr {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   margin: 20px;
   color: #426b1f;
 }
