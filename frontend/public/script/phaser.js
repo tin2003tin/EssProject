@@ -80,6 +80,7 @@ class Checker {
           SelectedChecker = this;
           SelectedChecker.sprite.setAlpha(0.8);
           SelectedChecker.showMoveable();
+          console.log(Board.BoardCheckers);
         } else {
           console.log("You can not move this checker");
         }
@@ -147,6 +148,7 @@ class Checker {
     checker.isKing = isking;
     SelectedChecker.color = "blank";
     Board.BoardCheckers[cupture[0] + cupture[1] * 8].color = "blank";
+    Board.clearAllMoveable();
     checker.getMoveable();
     console.log(checker.moveable);
   }
@@ -213,10 +215,8 @@ class Checker {
 
   clearMoveableShowed() {
     SelectedChecker.moveable.forEach((move) => {
-          Board.BoardCheckers[
-            move.col + move.row * 8
-          ].sprite.fillColor = 0xffa500;
-          Board.BoardCheckers[move.col + move.row * 8].sprite.fillAlpha = 0.0;
+      Board.BoardCheckers[move.col + move.row * 8].sprite.fillColor = 0xffa500;
+      Board.BoardCheckers[move.col + move.row * 8].sprite.fillAlpha = 0.0;
     });
   }
 
@@ -248,13 +248,16 @@ class Checker {
         const nextCol = col + directions[i].colChange;
         if (0 <= nextCol && nextCol < 8 && 0 <= nextRow && nextRow < 8) {
           const target = Board.BoardCheckers[nextCol + nextRow * 8];
-
-          if (target.color === "blank") {
+          
+          if (target.type === 0) {
             if (this.isKing) {
               this.move(nextCol, nextRow, i == 0, i == 1, i == 2, i == 3);
             }
             this.moveable.push(new Move(nextCol, nextRow, false));
-          } else if (target.color !== this.color) {
+          } else if (
+            (this.type > 0 && target.type < 0) ||
+            (this.type < 0 && target.type > 0)
+          ) {
             const nextNextRow = nextRow + directions[i].rowChange;
             const nextNextCol = nextCol + directions[i].colChange;
             const nextTarget =
@@ -265,7 +268,7 @@ class Checker {
               0 <= nextNextRow &&
               nextNextRow < 8
             ) {
-              if (nextTarget.color === "blank") {
+              if (nextTarget.type == 0) {
                 this.moveable.push(
                   new Move(nextNextCol, nextNextRow, true, nextCol, nextRow)
                 );
@@ -502,21 +505,23 @@ class Board extends Phaser.Scene {
     let white_moveable = false;
     let black_moveable = false;
     Board.BoardCheckers.forEach((checker) => {
-      if (checker.color == "white" && checker.moveable.length > 0) {
+      if (checker.type > 0 && checker.moveable.length > 0) {
         white_moveable = true;
       }
-      if (checker.color == "black" && checker.moveable.length > 0) {
+      if (checker.color < 0 && checker.moveable.length > 0) {
         black_moveable = true;
       }
     });
-    if (!white_moveable) {
-      whoWin = currentRoom.playerName;
-      return true;
-    }
-    whoWin = currentRoom.ownerName;
-    if (!black_moveable) {
-      return true;
-    }
+    console.log(white_moveable);
+    console.log(black_moveable);
+    // if (!white_moveable) {
+    //   whoWin = currentRoom.playerName;
+    //   return true;
+    // }
+    // whoWin = currentRoom.ownerName;
+    // if (!black_moveable) {
+    //   return true;
+    // }
 
     if (black == 1 && white == 1) {
       if (min_black == min_white) {

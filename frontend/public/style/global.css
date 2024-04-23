@@ -390,6 +390,7 @@ canvas {
   background-color: #4caf50;
   border-radius: 20px;
   border: none;
+  cursor: pointer;
 }
 
 #start-button {
@@ -402,6 +403,7 @@ canvas {
   background-color: #4caf50;
   border-radius: 20px;
   border: none;
+  cursor: pointer;
 }
 
 #gameState-text {
