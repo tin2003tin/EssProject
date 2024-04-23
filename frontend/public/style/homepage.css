@@ -43,3 +43,20 @@ body {
   min-width: 10%;
   z-index: -10;
 }
+
+#Submit-Button {
+  border-radius: 40px;
+  font-family: "Quicksand";
+  font-weight: 500;
+}
+
+#input {
+  font-family: "Quicksand";
+  font-weight: 500;
+  border-radius: 40px;
+}
+
+label {
+  font-family: "Quicksand";
+  font-weight: 500;
+}

@@ -10,10 +10,34 @@ body {
   background-repeat: repeat-y;
   overflow-y: hidden;
 }
+
 * {
   box-sizing: border-box;
 }
 
 .room-section {
   margin-left: 20%;
+}
+
+.sidebar {
+  font-family: "Quicksand";
+  font-weight: 700;
+}
+
+.Joining-Room {
+  font-family: "Quicksand";
+  font-weight: 700;
+}
+
+.modal {
+  font-family: "Quicksand";
+  font-weight: 500;
+}
+
+#input {
+  border-radius: 40px;
+}
+
+#Submit-Button {
+  border-radius: 40px;
 }

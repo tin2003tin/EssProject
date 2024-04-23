@@ -16,6 +16,9 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/akar-icons-fonts"></script>
   </head>
   <body>
@@ -60,11 +63,19 @@
             <i class="ai-face-happy"></i>
             <p id="sidebar-user">Guest</p>
           </button>
+        </li>
+        <button type="button" class="loading">
+          <i class="ai-arrow-repeat"></i>
+          <p class="loading-text">Reload</p>
+        </button>
+      </li>
+        <li>
           <button type="button" id="home-pagee-button">
             <i class="ai-home-alt1"></i>
             <p>Home</p>
           </button>
         </li>
+        
         <li>
           <button type="button" onclick="onClick(this)">
             <i class="ai-search"></i>
@@ -85,43 +96,15 @@
             </ul>
           </div>
         </li>
-        <li>
-          <button type="button" onclick="onClick(this)">
-            <i class="ai-gear"></i>
-            <p>Settings</p>
-            <i class="ai-chevron-down-small"></i>
-          </button>
-          <div class="sub-menu">
-            <ul>
-              <li>
-                <button type="button">Background</button>
-              </li>
-            </ul>
-          </div>
-        </li>
-        <li>
-          <button type="button" onclick="onClick(this)">
-            <i class="ai-person"></i>
-            <p>Profile</p>
-            <i class="ai-chevron-down-small"></i>
-          </button>
-          <div class="sub-menu">
-            <ul>
-              <li>
-                <button type="button">Avatar</button>
-              </li>
-            </ul>
-          </div>
-        </li>
       </ul>
     </aside>
     <section class="room-section">
-      <div>
+      <!-- <div class="reloadingBox">
         <button class="loading">
           <span class="spinner"></span>
           <p class="loading-text">Reloading</p>
         </button>
-      </div>
+      </div> -->
       <div class="Joining-Room">
         <div class="cards"></div>
       </div>
