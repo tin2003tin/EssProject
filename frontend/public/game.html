@@ -5,23 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/phaser@3/dist/phaser.min.js"></script>
     <link rel="stylesheet" href="./style/global.css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Concert One"
-      rel="stylesheet"
-    />
+        <link rel="stylesheet" href="./components/modal/style.css" />
     <title>MarkHot</title>
   </head>
   <body class="gameBody">
-    <div id="myModal" class="game-modal">
-      <div class="modal-content">
-        <h2>Modal Title</h2>
-        <p>This is a modal popup message.</p>
+    <div class="modal-body">
+      <div class="modal-background"></div>
+      <div class="modal" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        Ended
+         <div id="winner" style="font-size: 50px; color: white;"></div>
+        <div id="end-counting" style="font-size: 50px; color: white;"></div>
       </div>
-    </div>
+    </div> 
+  
 
     <div class="gameInfo">
-      <!--   -->
-      <!-- <button id="room-page-button">To Room</button> -->
       <div style="display: flex; width: 350px">
         <div
           style="
@@ -35,7 +33,6 @@
             id="owner-name"
             style="background: black; padding: 20px; color: white"
           ></div>
-          <div id="player-turn"></div>
           <div
             id="player-name"
             style="background: white; padding: 20px; color: black"
@@ -44,9 +41,18 @@
       </div>
       <button id="kick-button" style="display: none">Kick</button>
       <button id="start-button" style="display: none">Start Game</button>
-      <div id="gameState-text" style="font-size: 40px">waiting</div>
-      <div id="winner"></div>
-      <div id="end-counting"></div>
+       <div id="gameState-text" style="font-size: 35px">waiting</div>
+      <div
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        "
+      >
+        <div id="player-turn" style="font-size: 35px"></div>
+       
+      </div>
+
     </div>
   </body>
   <script type="module" src="script/gamePage.js"></script>

@@ -256,32 +256,6 @@ hr {
   justify-content: space-between;
 }
 
-.modal {
-  font-family: "Concert One";
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.05); /* Black w/ opacity */
-}
-
-.modal-content {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  border: none;
-  font-size: 30px;
-  border-radius: 20px;
-  margin: 15% auto;
-  padding: 20px;
-  width: 25%;
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
 .createRoom {
   margin-top: 0em;
   margin-bottom: 0.5em;
@@ -336,25 +310,6 @@ hr {
   background-color: #45a049;
 }
 
-.game-modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgba(0, 0, 0, 0.2); /* Black w/ opacity */
-}
-
-.game-modal .modal-content {
-  background-color: #fefefe;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-}
 
 .gameBody {
   display: flex;

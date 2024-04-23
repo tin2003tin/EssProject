@@ -425,6 +425,7 @@ class Board extends Phaser.Scene {
   }
 
   runningState(room) {
+    showPlayersName(room);
     isStart = true;
     const startButton = document.getElementById("start-button");
     startButton.style.display = "none";
@@ -448,6 +449,7 @@ class Board extends Phaser.Scene {
     const playerturn = document.getElementById("player-turn");
     playerturn.textContent =
       "player turn: " + (player == "null" ? "Opponent" : "Me");
+    playerturn.style.color = player == "null" ? "red" : "green";
     if (isStart) {
       this.changePosition();
     }
@@ -459,13 +461,17 @@ class Board extends Phaser.Scene {
   endedState(room) {
     this.changePosition();
     this.checkEnded(room.board);
+
+    const modalClassList = document.querySelector(".modal-body").classList;
+    modalClassList.add("open");
+
     const gameStateText = document.getElementById("gameState-text");
     gameStateText.textContent = "ended";
     const winnerText = document.getElementById("winner");
     winnerText.textContent = whoWin;
     isEnd = true;
     const endCounter = document.getElementById("end-counting");
-    let countdown = 10;
+    let countdown = 15;
     const intervalId = setInterval(async () => {
       if (countdown > 0) {
         countdown--;
